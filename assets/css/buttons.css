@@ -4,13 +4,6 @@
     --spinner-bg-color: silver;
 }
 
-button {
-    width: 100%;
-    text-align: center;
-    height: 75px;
-    box-sizing: border-box;
-}
-
 aside {
     position: fixed;
     inset: 0;
@@ -29,279 +22,42 @@ aside p {
     font-size: 10px;
 }
 
-.spinner {
+fieldset {
     display: inline-block;
-    width: var(--spinner-size);
-    height: var(--spinner-size);
-    margin: var(--spinner-spacing);
-    background: var(--spinner-bg-color);
-}
-.spinner.pause,
-.spinner.pause::before,
-.spinner.pause::after {
-    animation-play-state: paused !important;
+    padding: 2px;
+    margin: 10px;
+    text-align: center;
 }
 
-.spinner.pause:hover,
-.spinner.pause:active,
-.spinner.pause:hover::before,
-.spinner.pause:active::before,
-.spinner.pause:hover::after,
-.spinner.pause:active::after {
-    animation-play-state: running !important;
+fieldset button {
+    width: 80%;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 10px;
+    border: 0;
+    border-radius: 0;
+    background: 0;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
 }
 
-.spinner001 {}
-.spinner001::after { content: ""; display: block; width: 90%; height: 90%; margin-top: 0; margin-left: 0; background: conic-gradient(gold 90deg, black 90deg 180deg, gold 180deg 270deg, black 270deg); border-radius: 50%; animation: spinner001 1s infinite linear; box-shadow: 0 0 5px black; }
-@keyframes spinner001 {0%{margin-left:0;margin-top:0;transform:rotate(0);} 25%{margin-left:5%;margin-top:0;} 50%{margin-left:5%;margin-top:5%} 75%{margin-left:0;margin-top:5%} 100%{margin-left:0;margin-top:0;transform:rotate(360deg);} }
-.spinner002 { position: relative; overflow: hidden; }
-.spinner002::before { content: ""; display: block; width: 100%; height: 50%; background-color: firebrick; position: absolute; top: 0; animation: spinner002b 2s infinite linear; }
-.spinner002::after { content: ""; display: block; width: 100%; height: 50%; background-color: orange; position: absolute; bottom: 0; animation: spinner002a 2s infinite linear; }
-@keyframes spinner002a {0%{width:100%;height:50%;bottom:0;left:100%} 49.99%{width:100%;height:50%;bottom:0;left:-100%} 50%{width:50%;height:100%;left:50%;bottom:-100%;} 100%{width:50%;height:100%;left:50%;bottom:100%;}}
-@keyframes spinner002b {0%{width:100%;height:50%;top:0;left:-100%} 49.99%{width:100%;height:50%;top:0;left:100%;} 50%{width:50%;height:100%;left:0;top:-100%;} 100%{width:50%;height:100%;left:0;top:100%;}}
-.spinner003 { position: relative; }
-.spinner003::before,
-.spinner003::after { content: ""; display: block; box-sizing: border-box; width: 50%; height: 50%; position: absolute; left: 25%; top: 25%; border-radius: 50%; border: 15px dotted forestgreen; opacity: 0.25; }
-.spinner003::before { animation: spinner003 3s infinite linear; }
-.spinner003::after { animation: spinner003 3s reverse infinite linear; }
-@keyframes spinner003 {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-.spinner004 { position: relative; overflow: hidden; }
-.spinner004::before,
-.spinner004::after { content: ""; display: block; box-sizing: border-box; position: absolute; border: 5px double grey; }
-.spinner004::before { width: 90%; height: 90%; left: 5%; top: 5%; animation: spinner004 2s infinite; }
-.spinner004::after { width: 76%; height: 76%; left: 12%; top: 12%; animation: spinner004 2s reverse infinite; }
-@keyframes spinner004 {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-.spinner005 { position: relative; overflow: hidden; }
-.spinner005::before { content: ""; display: block; width: calc(100% * 1.414); height: calc(100% * 1.414); position: absolute; top: calc(50% * -0.414); left: calc(50% * -0.414); background: conic-gradient(red, orange, yellow, green, blue, indigo, violet, red); animation: spinner005 5s reverse infinite linear; }
-@keyframes spinner005 {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-.spinner006 { background: repeating-linear-gradient(to right, green 10px, lime 20px); animation: spinner006 2.5s alternate-reverse infinite linear; }
-@keyframes spinner006 {from{background-size:1%;background-position:300% 0;} to{background-size:100%;background-position:-300% 0;}}
-.spinner007 { position: relative; }
-.spinner007::before { content: ""; display: block; position: absolute; inset: 0; border: dashed navy; border-radius: 50%; animation: spinner007 3s alternate infinite; }
-@keyframes spinner007 {from{border-width: 0;transform:rotate(0);} to{border-width: 55px;transform:rotate(575deg);}}
-.spinner008 { position: relative; background: radial-gradient(closest-side, transparent 96%, brown 96%, brown 99%, transparent 99%); }
-.spinner008::before,
-.spinner008::after { content: ""; display: block; position: absolute; top: 50%; left: 50%; box-sizing: border-box; height: 4px; border-top: 4px solid brown; transform-origin: top left; border-radius: 50%; }
-.spinner008::before { width: 40%; animation: spinner008 2s infinite linear; }
-.spinner008::after { width: 30%; animation: spinner008 10s infinite linear; }
-@keyframes spinner008 {0%{transform:rotate(0);} 50%{transform:rotate(180deg) translateY(-4px);} 100%{transform:rotate(360deg);}}
-.spinner009 { position: relative; overflow: hidden; }
-.spinner009::before { content: ""; display: block; position: absolute; inset: 25%; background-color: seagreen; box-shadow: 2px 2px 10px black; animation: spinner009 6s infinite linear; }
-@keyframes spinner009 {25%{transform: skew(180deg, 0)} 75%{transform: skew(0, 180deg);}}
-.spinner010 { position: relative; }
-.spinner010::before,
-.spinner010::after { content: ""; display: block; position: absolute; width: 40%; height: 10%; top: calc((90% - 100px) / 2); border-top: 50px solid red; border-bottom: 50px solid red; transform: translateY(0); }
-.spinner010::before { left: 5%; animation: spinner010 2s infinite; }
-.spinner010::after { right: 5%; animation: spinner010 2.5s reverse infinite; }
-@keyframes spinner010 {0%{border-top-width: 50px; border-bottom-width: 50px; transform: translateY(0);} 25%{border-top-width: 0; border-bottom-width: 50px; transform: translateY(50px);} 50%{border-top-width: 0; border-bottom-width: 0; transform: translateY(50px);} 75%{border-top-width: 50px; border-bottom-width: 0; transform: translateY(0);} 100%{border-top-width: 50px; border-bottom-width: 50px; transform: translateY(0);}}
-.spinner011 { position: relative; overflow: hidden; }
-.spinner011::before,
-.spinner011::after { content: ""; display: block; position: absolute; }
-.spinner011::before { inset: 70% 10% 20%; transform: rotate(-15deg); border-bottom: 10px ridge blueviolet; border-left: 10px ridge blueviolet; border-right: 10px inset blueviolet; border-radius: 20px; animation: spinner011b 2s alternate infinite ease-in-out; }
-.spinner011::after { inset: 25%; border-radius: 50%; background: radial-gradient(at 60% 20%, lavender, blueviolet, black); animation: spinner011a 2s alternate infinite linear; }
-@keyframes spinner011a {0%{transform:translate(-50%, 12%);} 50%{transform:translate(0, 0);} 100%{transform:translate(50%, 12%);}}
-@keyframes spinner011b {from{transform:rotate(-15deg);} to{transform:rotate(15deg);}}
-.spinner012 { position: relative; overflow: hidden; }
-.spinner012::before { content: ""; display: block; position: absolute; inset: 10%; border: 5px solid hotpink; box-shadow: 0 0 20px 5px hotpink, inset 0 0 20px 5px hotpink; animation: spinner012 4s infinite; }
-@keyframes spinner012 {50%{border-radius: 50%; transform: rotate(360deg) scale(0.25);}}
-.spinner013 { position: relative; overflow: hidden; }
-.spinner013::before,
-.spinner013::after { content: ""; display: block; position: absolute; inset: 25%; border-radius: 25px; background: black; box-shadow: 0 0 10px black; }
-.spinner013::before { animation: spinner013b 4s infinite linear; }
-.spinner013::after { animation: spinner013a 4s reverse infinite linear; }
-@keyframes spinner013a {from{transform:scale(1, 1.5) rotate(0);} to{transform:scale(1, 1.5) rotate(360deg);}}
-@keyframes spinner013b {from{transform:scale(1.5, 1) rotate(0);} to{transform:scale(1.5, 1) rotate(360deg);}}
-.spinner014 { position: relative; }
-.spinner014::before,
-.spinner014::after { content: ""; display: block; position: absolute; inset: 40% 0; }
-.spinner014::before { background: radial-gradient(circle closest-side, goldenrod 99%, transparent 99%); animation: spinner014 3s infinite alternate ease-in-out; }
-.spinner014::after { background: radial-gradient(closest-side circle at 25% center, goldenrod 99%, transparent 99%), radial-gradient(closest-side circle at 75% center, goldenrod 99%, transparent 99%); animation: spinner014 3s alternate-reverse infinite ease-in-out; }
-@keyframes spinner014 {from{transform:translateY(-200%);} to{transform:translateY(200%);}}
-.spinner015 {}
-.spinner015::before { content: ""; display: block; height: 1px; margin-top: calc(50% - 30px); border-radius: 50%; border-left: 30px solid transparent; border-right: 30px solid transparent; border-top: 30px solid dodgerblue; border-bottom: 30px solid dodgerblue; animation: spinner015 2s infinite ease-in-out; }
-@keyframes spinner015 {from{transform: scale(1,2);} to{transform: scale(1,-2);}}
-.spinner016 { position: relative; }
-.spinner016::before,
-.spinner016::after { content: ""; display: block; position: absolute; inset: 20%; border: 1px solid black; border-radius: 40%; }
-.spinner016::before { animation: spinner016a 1s infinite linear, spinner016b 5s alternate infinite; }
-.spinner016::after { animation: spinner016a 1s reverse infinite linear, spinner016c 6s alternate infinite; }
-@keyframes spinner016a {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-@keyframes spinner016b {0%{transform-origin: 45% center;} 50%{transform-origin: center center;} 100%{transform-origin: 55% center;}}
-@keyframes spinner016c {0%{transform-origin: center 45%;} 50%{transform-origin: center center;} 100%{transform-origin: center 55%;}}
-.spinner017 { position: relative; overflow: hidden; }
-.spinner017::before { content: ""; display: block; position: absolute; inset: 10%; clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%); background: linear-gradient(burlywood, chocolate); animation: spinner017 2.5s infinite ease-out; }
-@keyframes spinner017 {0%{transform:translateX(-100%);} 35%{transform:translateX(5%);} 50%{transform:translateX(0);} 60%{transform:translateX(0);} 100%{transform:translateX(110%);} }
-.spinner018 { position: relative; }
-.spinner018::before,
-.spinner018::after { display: block; position: absolute; }
-.spinner018::before { content: ""; inset: 50% 5% 40%; border-radius: 10px; background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red); background-size: 500%; box-shadow: 0 3px 10px 2px black; animation: spinner018 10s infinite linear; }
-.spinner018::after { content: "Loading..."; inset: 30% 5%; text-align: center; font-family: sans-serif; font-weight: 800; }
-@keyframes spinner018 {from{background-position: 0 0;} to{background-position: 500% 0;}}
-.spinner019 { position: relative; overflow: hidden; }
-.spinner019::before,
-.spinner019::after { content: ""; display: block; position: absolute; width: 11%; height: 90%; border-left: 16px solid aquamarine; border-right: 16px solid aquamarine; bottom: 0; }
-.spinner019::before { left: 11%; animation: spinner019 2.5s 0.3s infinite linear; }
-.spinner019::after { right: 11%; animation: spinner019 2.5s infinite linear; }
-@keyframes spinner019 {0%{transform: skew(0) translateY(-120%);} 40%{transform: skew(0, 45deg) translateY(-15%);} 50%{transform: skew(0) translateY(0);} 60%{transform: skew(0, -45deg) translateY(-15%);} 100%{transform: skew(0) translateY(-120%);}}
-.spinner020 { position: relative; }
-.spinner020::before,
-.spinner020::after { content: ""; display: block; position: absolute; inset: 30%; background-color: darkkhaki; transform: rotate(45deg); }
-.spinner020::before { inset: 10%; background: radial-gradient(transparent 80%, darkkhaki 80%, darkkhaki 90%, transparent 90%); animation: spinner020 1.5s infinite; }
-@keyframes spinner020 {0%{transform:scale(0.75) rotate(0);} 50%{transform:scale(1);} 100%{transform:scale(0.75) rotate(360deg);}}
-.spinner021 { position: relative; }
-.spinner021::before { content: ""; display: block; position: absolute; inset: 10%; background: radial-gradient(closest-side circle at 15% 15%, crimson 99%, transparent 99%), radial-gradient(closest-side circle at 85% 15%, crimson 99%, transparent 99%), radial-gradient(closest-side circle at 15% 85%, crimson 99%, transparent 99%), radial-gradient(closest-side circle at 85% 85%, crimson 99%, transparent 99%); animation: spinner021 1.5s infinite linear; }
-@keyframes spinner021 {from{transform:scale(1,1) rotate(0);} to{transform:scale(-1,-1) rotate(90deg);}}
-.spinner022 { position: relative; overflow: hidden; }
-.spinner022::before { content: ""; display: block; position: absolute; inset: 49% 15%; background-color: darkblue; animation: spinner022 2s infinite linear; }
-@keyframes spinner022 {0%{transform: translate(-30%, -1250%) rotate(-45deg);} 12.5%{transform: translate(0, -800%) rotate(-90deg);} 25%{transform: translate(30%, -1250%) rotate(-135deg);} 37.5%{transform: translate(20%, 0) rotate(-180deg);} 50%{transform: translate(30%, 1250%) rotate(-225deg);} 62.5%{transform: translate(0, 800%) rotate(-270deg);} 75%{transform: translate(-30%, 1250%) rotate(-315deg);} 87.5%{transform: translate(-20%, 0) rotate(-360deg);} 100%{transform: translate(-30%, -1250%) rotate(-405deg);}}
-.spinner023 { position: relative; }
-.spinner023::before,
-.spinner023::after { content: ""; display: block; position: absolute; animation: spinner023 1.5s infinite linear; }
-.spinner023::before { inset: 20%; border-radius: 50%; border-top: 10px solid yellow; border-right: 20px solid transparent; filter: blur(3px); }
-.spinner023::after { inset: 10%; background: radial-gradient(closest-side circle at 75% 25%, white, yellow, transparent); }
-@keyframes spinner023 {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-.spinner024 { position: relative; }
-.spinner024::before,
-.spinner024::after { content: ""; display: block; position: absolute; inset: 0; border-radius: 50%; mix-blend-mode: difference; }
-.spinner024::before { border: 40px dotted rgba(230, 230, 250, 0.5); animation: spinner024 2s infinite; }
-.spinner024::after { border: 40px dashed rgba(238, 130, 238, 0.95); animation: spinner024 12s reverse infinite linear; }
-@keyframes spinner024 {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-.spinner025 { position: relative; }
-.spinner025::before,
-.spinner025::after { content: ""; display: block; position: absolute; top: 25%; left: 25%; width: 20%; height: 20%; background-color: limegreen; box-shadow: 0 0 5px black; transform-origin: center; }
-.spinner025::before { animation: spinner025 1.5s infinite linear; }
-.spinner025::after { animation: spinner025 1.5s 0.75s infinite linear; }
-@keyframes spinner025 {0%{top: 25%; left: 25%;} 25%{top: 55%; left: 25%;} 50%{top: 55%; left: 55%;} 75%{top: 25%; left: 55%;} 100%{top: 25%; left: 25%;}}
-.spinner026 { position: relative; overflow: hidden; }
-.spinner026::before,
-.spinner026::after { content: ""; display: block; position: absolute; inset: -10%; background: repeating-linear-gradient(to right, black 1px, transparent 2px, transparent 3px); }
-.spinner026::before { animation: spinner026 1.4s alternate infinite; }
-.spinner026::after { animation: spinner026 2.1s 0.6s alternate-reverse infinite; }
-@keyframes spinner026 {from{transform:rotate(-10deg);} to{transform:rotate(10deg);}}
-.spinner027 { position: relative; }
-.spinner027::before,
-.spinner027::after { content: ""; display: block; position: absolute; border: 20px solid steelblue; border-radius: 50%; }
-.spinner027::before { inset: 0; border-bottom-color: transparent; animation: spinner027 1.5s infinite; box-shadow: 0 0 5px black, inset 0 0 5px 3px #666; }
-.spinner027::after { inset: 25px; border-top-color: transparent; animation: spinner027 1.2s 0.3s reverse infinite; box-shadow: inset 0 0 5px 3px #666; }
-@keyframes spinner027 {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-.spinner028 { position: relative; }
-.spinner028::before,
-.spinner028::after { content: ""; display: block; position: absolute; border-radius: 50%; }
-.spinner028::before { inset: 10%; background: radial-gradient(circle at 95% 50%, lightpink 1%, rgba(255, 0, 255, 0.5), transparent 35%), radial-gradient(black 60%, transparent 60%), radial-gradient(at 100% 50%, lightpink 10%, magenta 25%, maroon); box-shadow: 0 0 6px black; animation: spinner028 4s infinite linear; }
-.spinner028::after { inset: 20%; background: radial-gradient(circle at 75% 15%, white, transparent 6%); }
-@keyframes spinner028 {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-.spinner029 { position: relative; }
-.spinner029::before,
-.spinner029::after { content: ""; display: block; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(transparent, indigo); opacity: 0; }
-.spinner029::before { animation: spinner029 2s infinite ease-in; }
-.spinner029::after { animation: spinner029 2s 1s infinite ease-in; }
-@keyframes spinner029 {from{transform:scale(0); opacity:1;} to{transform:scale(1.15); opacity:0;}}
-.spinner030 { position: relative; }
-.spinner030::before,
-.spinner030::after { content: ""; display: block; position: absolute; inset: 0; border: 75px solid transparent; animation: spinner030 1s alternate infinite; }
-.spinner030::before { border-right: 75px solid rgb(254, 221, 0); border-bottom: 75px solid rgb(254, 221, 0); transform-origin: top right; }
-.spinner030::after { border-top: 75px solid rgb(0, 87, 184); border-left: 75px solid rgb(0, 87, 184); transform-origin: bottom left; }
-@keyframes spinner030 {0%{transform:scale(0);} 100%{transform: scale(1);}}
-.spinner031 { position: relative; }
-.spinner031::before { content: ""; display: block; position: absolute; inset: 20%; border-radius: 50%; border: 10px solid darkslateblue; outline: 20px dashed darkslateblue; box-shadow: 0 0 5px 3px black, inset 0 0 5px 3px black; animation: spinner031 1s reverse infinite; }
-@keyframes spinner031 {from{transform:rotate(0);} to{transform:rotate(360deg);}}
-.spinner032 { position: relative; }
-.spinner032::before,
-.spinner032::after { content: ""; display: block; position: absolute; }
-.spinner032::before { inset: 10%; background-color: darkolivegreen; animation: spinner032 2s alternate infinite linear; box-shadow: 0 3px 5px black; }
-.spinner032::after { inset: 25%; background-color: darkkhaki; animation: spinner032 2s 0.75s alternate-reverse infinite linear; box-shadow: inset 0 3px 5px black; }
-@keyframes spinner032 {from{transform:rotate(-15deg);} to{transform:rotate(15deg);}}
-.spinner033 { position: relative; }
-.spinner033::before,
-.spinner033::after { content: ""; display: block; position: absolute; top: 37%; width: 25%; height: 25%; border-radius: 45%; background: orangered; border: 3px outset dimgrey; -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(255,255,255,0.25)); }
-.spinner033::before { left: 16.6%; animation: spinner033 1s infinite ease-out; }
-.spinner033::after { right: 16.6%; animation: spinner033 1s 0.5s infinite ease-out; }
-@keyframes spinner033 {0%{transform:scale(1,1)} 10%{transform:scale(-1,1);} 20%{transform:scale(1,1);} 30%{transform:scale(-1,1);} 40%{transform:scale(1,1);} 50%{transform:scale(-1,1);} 65%{transform:scale(1,1);} 80%{transform:scale(-1,1);} 100%{transform:scale(1,1);}}
-.spinner034 { position: relative; }
-.spinner034::before,
-.spinner034::after { content: ""; display: block; position: absolute; inset: 15%; }
-.spinner034::before { background: conic-gradient(transparent 0.25turn, black 0.25turn 0.5turn, transparent 0.5turn 0.75turn, black 0.75turn); animation: spinner034 5s infinite linear; }
-.spinner034::after { background: conic-gradient(white 0.25turn, transparent 0.25turn 0.5turn, white 0.5turn 0.75turn, transparent 0.75turn); animation: spinner034 5s 0.25s reverse infinite linear; }
-@keyframes spinner034 {0%{transform:translate(0,0);} 12.5%{transform:translate(0,-5%);} 25%{transform:translate(0,0);} 37.5%{transform:translate(5%,0);} 50%{transform:translate(0,0);} 62.5%{transform:translate(0,5%);} 75%{transform:translate(0,0);} 87.5%{transform:translate(-5%,0);} 100%{transform:translate(0,0);} }
-.spinner035 { position: relative; }
-.spinner035::before,
-.spinner035::after { content: ""; display: block; position: absolute; border-radius: 50%; box-shadow: 0 0 5px 3px black, inset 0 0 5px 3px black; }
-.spinner035::before { inset: 35%; border: 10px groove yellowgreen; animation: spinner035 2s infinite linear; }
-.spinner035::after { inset: 5%; border: 30px ridge yellowgreen; animation: spinner035 2s infinite linear; }
-@keyframes spinner035 {from{transform: rotate(0);} to{transform: rotate(360deg);}}
-.spinner036 { position: relative; }
-.spinner036::before,
-.spinner036::after { content: ""; display: block; position: absolute; width: 15%; height: 15%; box-shadow: 0 0 3px black;  }
-.spinner036::before { top: 42.5%; left: 42.5%; background-color: darksalmon; border: 1px solid indianred; }
-.spinner036::after { top:22%; left:42.5%; transform: rotate(45deg); background-color: indianred; border: 1px solid darksalmon; animation: spinner036 3s infinite linear; }
-@keyframes spinner036 {0%{top:22%;left:42.5%;transform: rotate(45deg);} 12.5%{top:27%;left:57%;transform: rotate(135deg);} 25%{top:42.5%;left:63%;transform: rotate(225deg);} 38.5%{top:57%;left:57%;transform:rotate(315deg);} 50%{top:63%;left:42.5%;transform: rotate(405deg);} 62.5%{top:57%;left:27%;transform: rotate(495deg);} 75%{top:42.5%;left:22%;transform: rotate(585deg);} 87.5%{top:27%;left:27%;transform: rotate(675deg);} 100%{top:22%;left:42.5%;transform: rotate(765deg);}}
-.spinner037 { position: relative; }
-.spinner037::before,
-.spinner037::after { content: ""; display: block; position: absolute; inset: 10%; border-radius: 50%; background: radial-gradient(transparent, rgba(224, 165, 38, 0.75), transparent); }
-.spinner037::before { animation: spinner037 5s alternate infinite; }
-.spinner037::after { border: 1px solid white; box-shadow: 0 0 15px yellow; }
-@keyframes spinner037 {from{transform: scale(1);} to{transform: scale(0.1);}}
-.spinner038 { position: relative; overflow: hidden; }
-.spinner038::before,
-.spinner038::after { content: ""; display: block; position: absolute; inset: -14.14%; mix-blend-mode: difference; }
-.spinner038::before { background: repeating-linear-gradient(to right, springgreen, springgreen 15px, transparent 15px, transparent 30px); animation: spinner038 20s alternate infinite linear; }
-.spinner038::after { background: repeating-linear-gradient(to right, transparent, transparent 15px, springgreen 15px, springgreen 30px); animation: spinner038 20s alternate-reverse infinite linear; }
-@keyframes spinner038 {from{transform:rotate(-45deg);} to{transform:rotate(45deg);}}
-.spinner039 { position: relative; }
-.spinner039::before { content: ""; display: block; position: absolute; inset: 20%; border: 40px solid transparent; animation: spinner039 2.5s infinite linear; }
-@keyframes spinner039 {0%{border-color:transparent;border-left-color:navy;} 25%{border-color:transparent;border-top-color:navy;} 50%{border-color:transparent;border-right-color:navy;} 75%{border-color:transparent;border-bottom-color:navy;} 100%{border-color:transparent;border-left-color:navy;}}
-.spinner040 { position: relative; }
-.spinner040::before { content: ""; display: block; position: absolute; width: 50%; height: 50%; background: linear-gradient(darkred, red); box-shadow: 0 0 3px black; animation: spinner040 2s infinite linear; }
-@keyframes spinner040 {0%{top:0;left:0;transform:scale(1,1);} 25%{top:0;left:50%;transform:scale(-1,1);} 50%{top:50%;left:50%;transform:scale(-1,-1);} 75%{top:50%;left:0;transform:scale(1,-1);} 100%{top:0;left:0;transform:scale(1,1);}}
-.spinner041 { position: relative; }
-.spinner041::before,
-.spinner041::after { content: ""; display: block; position: absolute; border-radius: 50%; }
-.spinner041::before { inset: 10%; background: linear-gradient(transparent 48%, red 48%, red 52%, transparent 52%); animation: spinner041 1s infinite; }
-.spinner041::after { inset: 20%; background: white; border: 5px solid black; box-shadow: inset 0 0 4px black; }
-@keyframes spinner041 {from{transform: rotate(0);} to{transform: rotate(360deg);}}
-.spinner042 { position: relative; }
-.spinner042::before { content: ""; display: block; position: absolute; inset: 0 25% 50%; border-left: 37px solid transparent; border-right: 37px solid transparent; border-bottom: 75px ridge green; transform-origin: 50% 100%; animation: spinner042 3s infinite linear; }
-@keyframes spinner042 {0%{transform: rotate(0);} 8%{transform: rotate(90deg);} 9%{transform: rotate(100deg);} 10%{transform: rotate(90deg);} 25%{transform: rotate(90deg);} 33%{transform: rotate(180deg);} 34%{transform: rotate(190deg);} 35%{transform: rotate(180deg);} 50%{transform: rotate(180deg);} 58%{transform: rotate(270deg);} 59%{transform: rotate(280deg);} 60%{transform: rotate(270deg);} 75%{transform: rotate(270deg);} 83%{transform: rotate(360deg);} 84%{transform: rotate(370deg);} 85%{transform: rotate(360deg);} 100%{transform: rotate(360deg);}}
-.spinner043 { position: relative; overflow: hidden; }
-.spinner043::before { content: ""; display: block; position: absolute; inset: 5% 20% 20% 5%; border-radius: 50%; border: 5px solid gold; background: radial-gradient(closest-side circle at 61% 61%, chocolate, saddlebrown 75%, black 75%, black 90%, transparent 90%); box-shadow: 0 0 5px 2px black, inset 0 0 5px 2px black; transform-origin: 61% 61%; animation: spinner043 1s infinite linear; }
-@keyframes spinner043 {from{transform: rotate(0);} to{transform: rotate(360deg);}}
-.spinner044 { position: relative; overflow: hidden; }
-.spinner044::before,
-.spinner044::after { content: ""; display: block; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(transparent 50%, slategrey 50%), linear-gradient(0deg, transparent 45%, black 45%, slategrey 50%, black 55%, transparent 55%), linear-gradient(60deg, transparent 45%, black 45%, slategrey 50%, black 55%, transparent 55%), linear-gradient(120deg, transparent 45%, black 45%, slategrey 50%, black 55%, transparent 55%); outline: 22px dashed #333; box-shadow: inset 0 0 5px 2px black, 0 0 15px 5px black; }
-.spinner044::before { top: 30%; left: -60%; animation: spinner044 2s infinite linear; }
-.spinner044::after { top: -5%; left: 65%; animation: spinner044 2s reverse infinite linear; }
-@keyframes spinner044 {from{transform: rotate(0);} to{transform: rotate(360deg);}}
-.spinner045 { position: relative; perspective: 800px; }
-.spinner045::before { content: ""; display: block; position: absolute; inset: 15%; background: radial-gradient(closest-side circle at 15% 15%, slateblue 100%, transparent 100%), radial-gradient(closest-side circle at 85% 15%, blue 100%, transparent 100%), radial-gradient(closest-side circle at 15% 85%, darkcyan 100%, transparent 100%), radial-gradient(closest-side circle at 85% 85%, purple 100%, transparent 100%); animation: spinner045 2s infinite linear; }
-@keyframes spinner045 {0%{transform: rotate3d(1,1,1,45deg);} 50%{transform: rotate3d(2,2,2,225deg);} 100%{transform: rotate3d(1,1,1,405deg);}}
-.spinner046 { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(rgba(0,0,0,0.5), transparent), silver; }
-.spinner046::before,
-.spinner046::after { font-family: sans-serif; font-weight: bold; display: grid; place-items: center; position: absolute; inset: 30%; background: cyan; -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(255,255,255,0.25)); transform: translateX(-80%) scale(1.2); }
-.spinner046::before { content: "B"; animation: spinner046 3s infinite linear; }
-.spinner046::after { content: "A"; animation: spinner046 3s 1.5s infinite linear; }
-@keyframes spinner046 {0%{background: cyan; transform: translateX(-80%) scale(1.2);} 25%{background: blue; transform: translateX(-80%) scale(0.5); z-index: -1;} 50%{background: blue; transform: translateX(80%) scale(0.5); z-index: -1;} 75%{background: cyan; transform: translateX(80%) scale(1.2);} 100%{background: cyan; transform: translateX(-80%) scale(1.2);}}
-.spinner047 { position: relative; perspective: 800px; }
-.spinner047::before,
-.spinner047::after { content: ""; display: block; position: absolute; inset: 0; border-radius: 50%; animation: spinner047 1.5s infinite linear; }
-.spinner047::before { border-top: 10px solid mediumvioletred; }
-.spinner047::after { border-bottom: 10px solid mediumvioletred; }
-@keyframes spinner047 {from{transform: rotateX(35deg) rotateY(-45deg) rotateZ(0);} to{transform: rotateX(35deg) rotateY(-45deg) rotateZ(1turn);}}
-.spinner048 { position: relative; background: black; filter: blur(10px) contrast(5); overflow: hidden; }
-.spinner048::before,
-.spinner048::after { content: ""; display: block; position: absolute; inset: 20%; background: orange; border-radius: 50%; }
-.spinner048::before { animation: spinner048 6s infinite; }
-.spinner048::after { animation: spinner048 3.5s infinite; }
-@keyframes spinner048 {from{transform: translateY(-130%);} to{transform: translateY(130%);}}
-.spinner049 { position: relative; }
-.spinner049::before,
-.spinner049::after { content: ""; display: block; position: absolute; inset: 35%; border-radius: 50%; }
-.spinner049::before { background: black; transform: translateY(140%) scale(0.75, 0.25); filter: blur(6px); animation: spinner049b 1s alternate infinite linear; }
-.spinner049::after { background: radial-gradient(circle at 65% 15%, white 2%, red 15%, darkred, black); animation: spinner049a 1s alternate infinite ease-out; }
-@keyframes spinner049a {0%{transform:translateY(100%) scale(1.1, 0.8);} 10%{transform: translateY(100%) scale(1,1);} 100%{transform:translateY(-100%);}}
-@keyframes spinner049b {from{filter:blur(1px);} to{filter:blur(30px);}}
-.spinner050 { position: relative; }
-.spinner050::before,
-.spinner050::after { content: ""; display: block; position: absolute; inset: 0; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
-.spinner050::before { background: radial-gradient(black, goldenrod); animation: spinner050 4s infinite linear; }
-.spinner050::after { background: radial-gradient(lemonchiffon, gold); animation: spinner050 4s reverse infinite linear; }
-@keyframes spinner050 {from{transform: rotate(0);} to{transform: rotate(1turn);}}
+fieldset button:hover {
+    background: 0;
+    text-shadow: 0 0 1px white;
+}
+
+fieldset.button001 button {
+    border-radius: 15px;
+	background: no-repeat center radial-gradient(circle closest-side, white, red, orange, yellow, green, blue, indigo, violet, transparent), silver;
+	background-size: 0 0, 100%;
+    color: black;
+	transition: 0.25s ease-out;
+}
+fieldset.button001 button:hover {
+    background-size: 1000% 1000%, 100%;
+}

@@ -27,6 +27,7 @@ fieldset {
     padding: 2px;
     margin: 10px;
     text-align: center;
+    max-width: 200px;
 }
 
 fieldset button {
@@ -36,6 +37,7 @@ fieldset button {
     box-sizing: border-box;
     font-size: 1em;
     font-weight: bold;
+    font-family: sans-serif;
     padding: 5px 10px;
     margin: 10px;
     border: 0;
@@ -48,16 +50,16 @@ fieldset button {
 
 fieldset button:hover {
     background: 0;
-    text-shadow: 0 0 1px white;
 }
 
-fieldset.button001 button {
+fieldset.button-rainbow button {
     border-radius: 15px;
 	background: no-repeat center radial-gradient(circle closest-side, white, red, orange, yellow, green, blue, indigo, violet, transparent), silver;
 	background-size: 0 0, 100%;
     color: black;
+    text-shadow: 0 0 1px white;
 	transition: 0.25s ease-out;
 }
-fieldset.button001 button:hover {
-    background-size: 1000% 1000%, 100%;
+fieldset.button-rainbow button:hover {
+    background-size: 400% 400%, 100%;
 }

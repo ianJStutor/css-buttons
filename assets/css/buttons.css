@@ -54,14 +54,23 @@ fieldset button:hover {
 
 #button-rainbow button {
     border-radius: 15px;
-	background: no-repeat center radial-gradient(circle closest-side, white, red, orange, yellow, green, blue, indigo, violet, transparent), silver;
-	background-size: 0 0, 100%;
     color: black;
     text-shadow: 0 0 1px white;
-	transition: 0.25s ease-out;
+	position: relative;
+    background: linear-gradient(transparent, white, transparent);
 }
-#button-rainbow :is(button:hover, button:focus) {
-    background-size: 400% 400%, 100%;
+#button-rainbow button::before {
+    content: "";
+    background: no-repeat center radial-gradient(circle closest-side, black, red, orange, yellow, green, blue, indigo, violet, transparent), black;
+	background-size: 0 0, 100%;
+    position: absolute;
+    display: block;
+    inset: 0;
+    transition: 0.25s ease-out;
+    z-index: -1;
+}
+#button-rainbow :is(button:hover, button:focus)::before {
+    background-size: 350% 350%, 100%;
 }
 
 #button-matchbox button {

@@ -28,6 +28,7 @@ fieldset {
     margin: 10px;
     text-align: center;
     max-width: 200px;
+    background: silver;
 }
 
 fieldset button {
@@ -52,17 +53,22 @@ fieldset button:hover {
     background: 0;
 }
 
+#button-rainbow {
+    isolation: isolate;
+}
 #button-rainbow button {
     border-radius: 15px;
     color: black;
     text-shadow: 0 0 1px white;
 	position: relative;
     background: linear-gradient(transparent, white, transparent);
+    box-shadow: 0 0 15px -5px black;
 }
 #button-rainbow button::before {
     content: "";
     background: no-repeat center radial-gradient(circle closest-side, black, red, orange, yellow, green, blue, indigo, violet, transparent), black;
 	background-size: 0 0, 100%;
+    border-radius: 15px;
     position: absolute;
     display: block;
     inset: 0;
@@ -76,13 +82,13 @@ fieldset button:hover {
 #button-matchbox button {
     background: silver;
     color: black;
-    border-right: 0px solid red;
-    border-left: 0px solid transparent;
-    border-radius: 15px;
+    border: 0 solid red;
+    background: linear-gradient(to right, saddlebrown 5%, beige 5%, beige 95%, saddlebrown 95%);
+    /* border-radius: 15px; */
     transition: 0.25s;
 }
 #button-matchbox :is(button:hover, button:focus) {
-    border-right: 40px solid red;
+    border-right-width: 40px;
     position: relative;
 }
 #button-matchbox :is(button:hover, button:focus)::after {

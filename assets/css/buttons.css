@@ -52,7 +52,7 @@ fieldset button:hover {
     background: 0;
 }
 
-fieldset.button-rainbow button {
+#button-rainbow button {
     border-radius: 15px;
 	background: no-repeat center radial-gradient(circle closest-side, white, red, orange, yellow, green, blue, indigo, violet, transparent), silver;
 	background-size: 0 0, 100%;
@@ -60,6 +60,29 @@ fieldset.button-rainbow button {
     text-shadow: 0 0 1px white;
 	transition: 0.25s ease-out;
 }
-fieldset.button-rainbow button:hover {
+#button-rainbow :is(button:hover, button:focus) {
     background-size: 400% 400%, 100%;
+}
+
+#button-matchbox button {
+    background: silver;
+    color: black;
+    border-right: 0px solid red;
+    border-left: 0px solid transparent;
+    border-radius: 15px;
+    transition: 0.25s;
+}
+#button-matchbox :is(button:hover, button:focus) {
+    border-right: 40px solid red;
+    position: relative;
+}
+#button-matchbox :is(button:hover, button:focus)::after {
+    content: "►";
+    position: absolute;
+    right: 0;
+    color: black;
+    opacity: 0; animation: button-matchbox-animation 0.1s 0.15s forwards;
+}
+@keyframes button-matchbox-animation {
+    to { right: -30px; opacity: 1; }
 }

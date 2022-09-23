@@ -60,8 +60,8 @@ fieldset button:hover {
 
 #button-matchbox button { background: silver; color: black; border: 0 solid chocolate; background: repeating-linear-gradient(bisque, bisque 3px, beige 3px, beige 6px, bisque 6px); box-shadow: inset 0 0 3px 1px saddlebrown; border-radius: 5px; transition: 0.25s; }
 #button-matchbox :is(button:hover, button:focus) { border-right-width: 40px; position: relative; }
-#button-matchbox :is(button:hover, button:focus)::after { content: "►"; position: absolute; right: 0; color: black; opacity: 0; animation: button-matchbox-animation 0.1s 0.15s forwards; }
-@keyframes button-matchbox-animation { to { right: -30px; opacity: 1; } }
+#button-matchbox :is(button:hover, button:focus)::after { content: "►"; position: absolute; right: 0; color: black; opacity: 0; animation: button-matchbox 0.1s 0.15s forwards; }
+@keyframes button-matchbox { to { right: -30px; opacity: 1; } }
 
 #button-circus button { clip-path: polygon(0 0, 90% 10%, 100% 85%, 15% 100%); box-shadow: inset 0 0 10px white; }
 #button-circus button:nth-of-type(n + 1) { background-color: red; }
@@ -72,3 +72,8 @@ fieldset button:hover {
 
 #button-pressme button { background: linear-gradient(mistyrose, ghostwhite, pink, hotpink); transition: 0.25s; position: relative; box-shadow: 0 5px 5px black; color: black; }
 #button-pressme button:hover { top: 5px; box-shadow: 0 1px 0 black; }
+
+#button-offset button { background: white; border: 1px solid navy; position: relative; color: black; }
+#button-offset button::before { content: ""; display: block; inset: 0; position: absolute; left: 5px; top: -5px; background: paleturquoise; width: 100%; height: 100%; mix-blend-mode: multiply; transition: background 0.25s; }
+#button-offset button:hover::before { background: turquoise; animation: button-offset 0.5s forwards; }
+@keyframes button-offset {75%{left: -5px; top: 5px;} 100%{left: 0; top: 0;}}

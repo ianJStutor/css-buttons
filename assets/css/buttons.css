@@ -53,72 +53,22 @@ fieldset button:hover {
     background: 0;
 }
 
-#button-rainbow {
-    isolation: isolate;
-}
-#button-rainbow button {
-    border-radius: 15px;
-    color: black;
-    text-shadow: 0 0 1px white;
-	position: relative;
-    background: linear-gradient(transparent, white, transparent);
-    box-shadow: 0 0 15px -5px black;
-}
-#button-rainbow button::before {
-    content: "";
-    background: no-repeat center radial-gradient(circle closest-side, black, red, orange, yellow, green, blue, indigo, violet, transparent), #444;
-	background-size: 0 0, 100%;
-    border-radius: 15px;
-    position: absolute;
-    display: block;
-    inset: 0;
-    transition: 0.25s ease-in-out;
-    z-index: -1;
-}
-#button-rainbow :is(button:hover, button:focus)::before {
-    background-size: 350% 350%, 100%;
-}
+#button-rainbow { isolation: isolate; }
+#button-rainbow button { border-radius: 15px; color: black; text-shadow: 0 0 1px white; position: relative; background: linear-gradient(transparent, white, transparent); box-shadow: 0 0 15px -5px black; }
+#button-rainbow button::before { content: ""; background: no-repeat center radial-gradient(circle closest-side, black, red, orange, yellow, green, blue, indigo, violet, transparent), #444; background-size: 0 0, 100%; border-radius: 15px; position: absolute; display: block; inset: 0; transition: 0.25s ease-in-out; z-index: -1; }
+#button-rainbow :is(button:hover, button:focus)::before { background-size: 350% 350%, 100%; }
 
-#button-matchbox button {
-    background: silver;
-    color: black;
-    border: 0 solid chocolate;
-    background: repeating-linear-gradient(bisque, bisque 3px, beige 3px, beige 6px, bisque 6px);
-    box-shadow: inset 0 0 3px 1px saddlebrown;
-    border-radius: 5px;
-    transition: 0.25s;
-}
-#button-matchbox :is(button:hover, button:focus) {
-    border-right-width: 40px;
-    position: relative;
-}
-#button-matchbox :is(button:hover, button:focus)::after {
-    content: "►";
-    position: absolute;
-    right: 0;
-    color: black;
-    opacity: 0; animation: button-matchbox-animation 0.1s 0.15s forwards;
-}
-@keyframes button-matchbox-animation {
-    to { right: -30px; opacity: 1; }
-}
+#button-matchbox button { background: silver; color: black; border: 0 solid chocolate; background: repeating-linear-gradient(bisque, bisque 3px, beige 3px, beige 6px, bisque 6px); box-shadow: inset 0 0 3px 1px saddlebrown; border-radius: 5px; transition: 0.25s; }
+#button-matchbox :is(button:hover, button:focus) { border-right-width: 40px; position: relative; }
+#button-matchbox :is(button:hover, button:focus)::after { content: "►"; position: absolute; right: 0; color: black; opacity: 0; animation: button-matchbox-animation 0.1s 0.15s forwards; }
+@keyframes button-matchbox-animation { to { right: -30px; opacity: 1; } }
 
-#button-circus button {
-    clip-path: polygon(0 0, 90% 10%, 100% 85%, 15% 100%);
-    box-shadow: inset 0 0 10px white;
-}
-#button-circus button:nth-of-type(n + 1) {
-    background-color: red;
-}
-#button-circus button:nth-of-type(n + 2) {
-    background-color: blue;
-}
-#button-circus button:nth-of-type(n + 3) {
-    background-color: green;
-}
-#button-circus button:nth-of-type(n + 4) {
-    background-color: purple;
-}
-#button-circus :is(button:hover, button:focus) {
-    clip-path: polygon(10% 10%, 100% 0%, 85% 100%, 5% 90%);
-}
+#button-circus button { clip-path: polygon(0 0, 90% 10%, 100% 85%, 15% 100%); box-shadow: inset 0 0 10px white; }
+#button-circus button:nth-of-type(n + 1) { background-color: red; }
+#button-circus button:nth-of-type(n + 2) { background-color: blue; }
+#button-circus button:nth-of-type(n + 3) { background-color: green; }
+#button-circus button:nth-of-type(n + 4) { background-color: purple; }
+#button-circus :is(button:hover, button:focus) { clip-path: polygon(10% 10%, 100% 0%, 85% 100%, 5% 90%); }
+
+#button-pressme button { background: linear-gradient(mistyrose, ghostwhite, pink, hotpink); transition: 0.25s; position: relative; box-shadow: 0 5px 5px black; color: black; }
+#button-pressme button:hover { top: 5px; box-shadow: 0 1px 0 black; }

@@ -71,11 +71,11 @@ fieldset button:hover {
 #button-circus :is(button:hover, button:focus) { clip-path: polygon(10% 10%, 100% 0%, 85% 100%, 5% 90%); }
 
 #button-pressme button { background: linear-gradient(mistyrose, ghostwhite, pink, hotpink); transition: 0.25s; position: relative; box-shadow: 0 5px 5px black; color: black; }
-#button-pressme button:hover { top: 5px; box-shadow: 0 1px 0 black; }
+#button-pressme :is(button:hover, button:focus) { top: 5px; box-shadow: 0 1px 0 black; }
 
 #button-offset button { background: white; position: relative; color: black; }
 #button-offset button::before { content: ""; display: block; inset: 0; position: absolute; left: 5px; top: -5px; background: paleturquoise; width: 100%; height: 100%; mix-blend-mode: multiply; transition: background 0.25s; }
-#button-offset button:hover::before { background: turquoise; animation: button-offset 0.5s forwards; }
+#button-offset :is(button:hover, button:focus)::before { background: turquoise; animation: button-offset 0.5s forwards; }
 @keyframes button-offset {75%{left: -5px; top: 5px;} 100%{left: 0; top: 0;}}
 
 #button-neon button { background: hotpink; color: black; transition: 0.25s; text-shadow: 0 0 3px white; border: 2px ridge dimgrey; border-radius: 15px; }
@@ -86,8 +86,7 @@ fieldset button:hover {
 #button-fillup :is(button:hover, button:focus) { color: white; }
 #button-fillup :is(button:hover, button:focus)::before {  transform: translateY(0%); transition: 0.5s; }
 
-#button-sonar {  }
 #button-sonar button { isolation: isolate; color: white; text-shadow: 0 0 5px black; position: relative; box-shadow: 0 0 0 0 transparent; }
 #button-sonar button::before { content: ""; position: absolute; box-shadow: inset 0 -2px 10px 2px slateblue; inset: 0; background: teal; z-index: -1; }
-#button-sonar :is(button:hover, button:focuse) { animation: button-sonar 1s infinite ease-out; }
+#button-sonar :is(button:hover, button:focus) { animation: button-sonar 1s infinite ease-out; }
 @keyframes button-sonar {50%{box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.75);} 100%{box-shadow: 0 0 20px 20px rgba(46, 139, 87, 0); }}

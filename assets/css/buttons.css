@@ -73,7 +73,12 @@ fieldset button:hover {
 #button-pressme button { background: linear-gradient(mistyrose, ghostwhite, pink, hotpink); transition: 0.25s; position: relative; box-shadow: 0 5px 5px black; color: black; }
 #button-pressme button:hover { top: 5px; box-shadow: 0 1px 0 black; }
 
-#button-offset button { background: white; border: 1px solid navy; position: relative; color: black; }
+#button-offset button { background: white; position: relative; color: black; }
 #button-offset button::before { content: ""; display: block; inset: 0; position: absolute; left: 5px; top: -5px; background: paleturquoise; width: 100%; height: 100%; mix-blend-mode: multiply; transition: background 0.25s; }
 #button-offset button:hover::before { background: turquoise; animation: button-offset 0.5s forwards; }
 @keyframes button-offset {75%{left: -5px; top: 5px;} 100%{left: 0; top: 0;}}
+
+#button-fillup button { background: floralwhite; border: 1px solid firebrick; border-radius: 20px; color: black; position: relative; isolation: isolate; overflow: hidden; transition: color 0.25s; }
+#button-fillup button::before { content: ""; display: block; position: absolute; inset: 0; background: firebrick; z-index: -1; transform: translateY(100%); transition: 0.25s; }
+#button-fillup :is(button:hover, button:focus) { color: white; }
+#button-fillup :is(button:hover, button:focus)::before {  transform: translateY(0%); transition: 0.5s; }

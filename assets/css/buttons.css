@@ -78,6 +78,9 @@ fieldset button:hover {
 #button-offset button:hover::before { background: turquoise; animation: button-offset 0.5s forwards; }
 @keyframes button-offset {75%{left: -5px; top: 5px;} 100%{left: 0; top: 0;}}
 
+#button-neon button { background: hotpink; color: black; transition: 0.25s; text-shadow: 0 0 3px white; border: 2px ridge dimgrey; border-radius: 15px; }
+#button-neon :is(button:hover, button:focus) { color: pink; text-shadow: 0 0 8px hotpink; background: black; border-color: pink; box-shadow: inset 0 0 5px 2px hotpink, 0 0 5px 2px hotpink, 0 0 10px black; }
+
 #button-fillup button { background: floralwhite; border: 1px solid firebrick; border-radius: 20px; color: black; position: relative; isolation: isolate; overflow: hidden; transition: color 0.25s; }
 #button-fillup button::before { content: ""; display: block; position: absolute; inset: 0; background: firebrick; z-index: -1; transform: translateY(100%); transition: 0.25s; }
 #button-fillup :is(button:hover, button:focus) { color: white; }

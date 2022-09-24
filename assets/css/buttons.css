@@ -82,3 +82,9 @@ fieldset button:hover {
 #button-fillup button::before { content: ""; display: block; position: absolute; inset: 0; background: firebrick; z-index: -1; transform: translateY(100%); transition: 0.25s; }
 #button-fillup :is(button:hover, button:focus) { color: white; }
 #button-fillup :is(button:hover, button:focus)::before {  transform: translateY(0%); transition: 0.5s; }
+
+#button-sonar {  }
+#button-sonar button { isolation: isolate; color: white; text-shadow: 0 0 5px black; position: relative; box-shadow: 0 0 0 0 transparent; }
+#button-sonar button::before { content: ""; position: absolute; box-shadow: inset 0 -2px 10px 2px slateblue; inset: 0; background: teal; z-index: -1; }
+#button-sonar :is(button:hover, button:focuse) { animation: button-sonar 1s infinite ease-out; }
+@keyframes button-sonar {50%{box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.75);} 100%{box-shadow: 0 0 20px 20px rgba(46, 139, 87, 0); }}

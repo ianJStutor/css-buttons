@@ -113,4 +113,8 @@ fieldset button:hover {
 #button-spin button { background: orange; color: black; text-shadow: 0 0 2px white; position: relative; isolation: isolate; overflow: hidden; transition: 0.25s; }
 #button-spin :is(button:hover, button:focus) { color: white; text-shadow: 0 0 2px black; }
 #button-spin :is(button:hover, button:focus)::before { content: ""; display: block; position: absolute; inset: 0; background: orangered; z-index: -1; transform: scale(0) rotate(0); animation: button-spin 0.25s forwards ease-out; }
-@keyframes button-spin {to{ transform: scale(1) rotate(900deg); }}
+@keyframes button-spin {to{ transform: scale(1) rotate(540deg); }}
+
+#button-skew { isolation: isolate; }
+#button-skew button { background: crimson; color: white; text-shadow: 0 0 2px black; transition: 0.25s; box-shadow: 3px 3px 0 4px black; }
+#button-skew :is(button:hover, button:focus) { z-index: 1; transform: skewX(-10deg) rotate(-5deg) scale(1.2); }

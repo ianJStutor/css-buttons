@@ -100,3 +100,12 @@ fieldset button:hover {
 #button-dimple button:nth-of-type(n + 3) { background-color: coral; }
 #button-dimple button:nth-of-type(n + 4) { background-color: cornflowerblue; }
 #button-dimple :is(button:hover, button:focus) { box-shadow: inset 0 5px 5px black, inset 0 -5px 10px white; transform: translateY(2px); }
+
+#button-copy { isolation: isolate; }
+#button-copy button { background: darkorchid; color: white; position: relative; }
+#button-copy button::before,
+#button-copy button::after { content: ""; display: block; position: absolute; width: 80%; height: 80%; transition: 0.5s; z-index: -1; }
+#button-copy button::before { left: 0; top: 0; }
+#button-copy button::after { right: 0; bottom: 0; }
+#button-copy :is(button:hover, button:focus)::before { left: -10px; top: -5px; background: orchid; }
+#button-copy :is(button:hover, button:focus)::after { right: -10px; bottom: -5px; background: mediumorchid; }

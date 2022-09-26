@@ -118,3 +118,6 @@ fieldset button:hover {
 #button-skew { isolation: isolate; }
 #button-skew button { background: crimson; color: white; text-shadow: 0 0 2px black; transition: 0.25s; box-shadow: 3px 3px 0 4px black; }
 #button-skew :is(button:hover, button:focus) { z-index: 1; transform: skewX(-10deg) rotate(-5deg) scale(1.2); }
+
+#button-stretch button { background: darkcyan; color: white; text-shadow: 0 0 2px black; border-radius: 5px; border: 1px solid black; transition: 0.25s ease-out; }
+#button-stretch :is(button:hover, button:focus) { border-radius: 40%; transform: scale(1.15, 0.85); letter-spacing: 0.25em; }

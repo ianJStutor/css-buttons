@@ -115,9 +115,16 @@ fieldset button:hover {
 #button-spin :is(button:hover, button:focus)::before { content: ""; display: block; position: absolute; inset: 0; background: orangered; z-index: -1; transform: scale(0) rotate(0); animation: button-spin 0.25s forwards ease-out; }
 @keyframes button-spin {to{ transform: scale(1) rotate(540deg); }}
 
+#button-calltoaction { isolation: isolate; }
+#button-calltoaction button { background: linear-gradient(cornsilk, darkkhaki); color: black; position: relative; transition: 0.25s; transform-origin: 50% 100%; }
+#button-calltoaction :is(button:hover, button:focus) { }
+#button-calltoaction :is(button:hover, button:focus)::before { content: "Click Now!"; font-size: calc(1em * 0.75); color: white; font-weight: bold; display: grid; place-items: center; position: absolute; z-index: -1; background: darkred; width: 90%; height: 25%; top: 0; left: 5%; border-radius: 10px 10px 0 0; animation: button-calltoaction 0.25s forwards; }
+#button-calltoaction :is(button:hover, button:focus)::after { content: ""; display: block; position: absolute; inset: 0; background: rgba(0,0,0,0.25); }
+@keyframes button-calltoaction {to{ transform: translateY(-100%); }}
+
 #button-skew { isolation: isolate; }
 #button-skew button { background: crimson; color: white; text-shadow: 0 0 2px black; transition: 0.25s; box-shadow: 3px 3px 0 4px black; }
 #button-skew :is(button:hover, button:focus) { z-index: 1; transform: skewX(-10deg) rotate(-5deg) scale(1.2); }
 
-#button-stretch button { background: darkcyan; color: white; text-shadow: 0 0 2px black; border-radius: 5px; border: 1px solid black; transition: 0.25s ease-out; }
+#button-stretch button { background: darkcyan; color: white; text-shadow: 0 0 2px black; border-radius: 5px; border: 1px solid black; box-shadow: 0 2px 4px black; transition: 0.25s ease-out; }
 #button-stretch :is(button:hover, button:focus) { border-radius: 40%; transform: scale(1.15, 0.85); letter-spacing: 0.25em; }

@@ -128,3 +128,8 @@ fieldset button:hover {
 
 #button-stretch button { background: darkcyan; color: white; text-shadow: 0 0 2px black; border-radius: 5px; border: 1px solid black; box-shadow: 0 2px 4px black; transition: 0.25s ease-out; }
 #button-stretch :is(button:hover, button:focus) { border-radius: 40%; transform: scale(1.15, 0.85); letter-spacing: 0.25em; }
+
+#button-focus button { background: darkblue; color: white; transition: 0.25s; position: relative; }
+#button-focus :is(button:hover, button:focus)::before { content: ""; display: block; position: absolute; background: darkblue; animation: button-focus 0.25s backwards; }
+#button-focus :is(button:hover, button:focus)::after { content: "Click!"; display: grid; place-items: center; position: absolute; inset: 0; background: darkblue; color: white; animation: button-focus 0.25s forwards; }
+@keyframes button-focus {from { filter: blur(15px); } to{ filter: blur(0); }}

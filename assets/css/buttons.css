@@ -127,6 +127,10 @@ fieldset button:hover {
 #button-skew button { background: repeating-linear-gradient(to right, crimson, crimson 15px, darkred 15px, darkred 16px); color: white; text-shadow: 0 0 2px black; transition: 0.25s; box-shadow: 3px 3px 0 4px black; }
 #button-skew :is(button:hover, button:focus) { z-index: 1; transform: skewX(-10deg) rotate(-5deg) scale(1.2); }
 
+#button-rollout button { text-shadow: 0 0 2px black; border-radius: 25px; overflow: hidden; position: relative; isolation: isolate; text-align: right; background: #444; }
+#button-rollout button::before { content: ">"; color: white; display: grid; place-items: center left; padding-left: 15%; box-sizing: border-box; position: absolute; width: 100%; height: 100%; background: black; left: -68%; top: 0; transition: 0.25s; z-index: -1; border-radius: 25px; }
+#button-rollout :is(button:hover, button:focus)::before { left: 0; }
+
 #button-stretch button { background: darkcyan; color: white; text-shadow: 0 0 2px black; border-radius: 5px; border: 1px solid black; box-shadow: 0 2px 4px black; transition: 0.25s ease-out; }
 #button-stretch :is(button:hover, button:focus) { border-radius: 40%; transform: scale(1.15, 0.85); letter-spacing: 0.25em; }
 

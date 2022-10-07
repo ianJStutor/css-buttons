@@ -147,3 +147,11 @@ fieldset button:hover {
 #button-inset button::before { content: ""; position: absolute; inset: 0; background: linear-gradient(purple, indigo); mix-blend-mode: lighten; box-shadow: inset 0 0 3px white; transition: 0.25s; }
 #button-inset :is(button:hover, button:focus)::before { animation: button-inset 0.25s forwards linear; }
 @keyframes button-inset {0%{inset:0;} 33%{inset:10px 0 0 10px;} 66%{inset: 5px 10px 10px 5px;} 100%{inset: 10px;}}
+
+#button-split { isolation: isolate; }
+#button-split button { position: relative; color: black; }
+#button-split button::before, #button-split button::after { content: ""; position: absolute; width: 100%; height: 100%; transform: skew(20deg); transition: 0.25s; }
+#button-split button::before { background: rgba(255, 218, 185, 0.75); left: -10px; top: -5px; z-index: -2; }
+#button-split button::after { background: rgba(255, 240, 245, 0.75); right: -10px; bottom: -5px; z-index: -1; }
+#button-split :is(button:hover, button:focus)::before { width: 50%; left: 0; top: 0; transform: skew(0); }
+#button-split :is(button:hover, button:focus)::after { width: 50%; right: 0; bottom: 0; transform: skew(0); }
